@@ -12,6 +12,8 @@ void loop(){
 
         if(iqra == 1){
             digitalWrite(testaja, HIGH);
+        } else if(iqra == 2){
+            digitalWrite(testaja, LOW);
         }
     }
 }
