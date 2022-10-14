@@ -3,8 +3,8 @@
 #include <ESP8266WebServer.h>
 
 //Koneksi ke mesin
-cost char *ssid = "GConnect";
-cost char *password = "12345678";
+const char *ssid = "GConnect";
+const char *password = "12345678";
 //===================================
 
 /* 
@@ -36,7 +36,7 @@ void setup(){
 
     Serial.print("\n");
     Serial.print("Alamat Internet : ");
-    Serial.prnt(Wifi.localIP());
+    Serial.print(WiFi.localIP());
     Serial.print("\n");
     Serial.print("Konek ke : ");
     Serial.println(ssid);
@@ -68,7 +68,7 @@ void setup(){
         server.send(200,"text/html", halaman);
         Serial.write(2); // urutan
         delay(1000);//satuan milidetik 1000 sama dengan 1 detik
-    })
+    });
 
     server.begin();
     Serial.println("Siap Di Oprasikan...");
