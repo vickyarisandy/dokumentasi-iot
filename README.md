@@ -58,5 +58,69 @@
 - shiftIn()
 - shiftOut()
 - tone()
+11. TRIGONOMETRY
+- cos()
+- sin()
+- tan()
+12. EXTERNAL INTERRUPTS
+- attachinterrupt()
+- detachinterrupt()
+13. BITS & BYTES
+- Bit()
+- bitClear()
+- bitRead()
+- bitSet()
+- bitWrite()
+- highByte()
+- lowByte()
+14. COMUNICATION
+- Serial
+- Stream
 
 >> Variable
+
+1. CONSTANTS
+- Floating Point
+- Constants
+- Integer Contstants
+- HIGH | LOW
+- INPUT | OUTPUT
+- INPUT_PULLUP
+- LED_BUILTIN
+- true | false
+2. CONVERSION
+- byte()
+- char()
+- float()
+- int()
+- long()
+- word()
+3. DATA TYPES
+- String
+- String()
+- array
+- bool
+- boolean
+- byte
+- char
+- double
+- float
+- int
+- long
+- short
+- unsigned //ini
+- char unsigned
+- int unsigned
+- long
+- void
+- word
+4. VARIABLE SCOPE & QUALIFIERS
+- const
+- scope
+- static
+- volatile
+5. UTILITIES
+- PROGMEM
+- sizeof()
+
+>> ARDUINO STRUCTURE
