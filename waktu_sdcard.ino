@@ -34,6 +34,9 @@ void loop(){
 
     fileku = SD.open("datalogger.txt", FILE_WRITE);
     if (fileku){
+        serial.print(rtc.getDOWStr(1));
+        serial.print(rtc.getDateStr());
+        serial.print(rtc.getTimeStr());
         Serial.print("Tampil serial monitor ddan catat");
         Serial.print(",");
         fileku.print("Tampil serial monitor ddan catat");
