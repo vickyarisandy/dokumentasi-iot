@@ -10,7 +10,7 @@ void loop(){
         data += char(Serial.read());
     }
     data.trim(); //buang spasi data
-    Serial.println(data);
+    Serial.println("dari pengirim "+data);
     delay(500);
 
 }

@@ -124,3 +124,5 @@
 - sizeof()
 
 >> ARDUINO STRUCTURE
+
+1. 
