@@ -1,7 +1,11 @@
+#include <EEPROM.h>
 #include <SPI.h>
 #include <SD.h>
 #include <Wire.h>
 #include "RTClib.h"
+
+#define EEPROM_SIZE 17
+
 File myFile;
 
 RTC_DS3231 rtc;
@@ -45,6 +49,7 @@ myFile.close();
 
 void setup ()
 {
+   EEPROM.begin(EEPROM_SIZE);
   Wire.begin();
   rtc.begin();
   Serial.begin(9600);
@@ -71,7 +76,7 @@ void setup ()
     // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
   }
 
-  
+  getstate();
 }
 void loop ()
 {

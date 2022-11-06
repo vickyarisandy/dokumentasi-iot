@@ -9,7 +9,7 @@ RTC_DS3231 rtc;
 //char daysOfTheWeek[7][12] = {"Minngu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"};
 
 int newHour = 0;
-int oldHour = 0;
+// int oldHour = 0;
 
 
 
@@ -30,7 +30,7 @@ myFile.print(" (");
 myFile.print(daysOfTheWeek[now.dayOfTheWeek()]);
 myFile.print(") ");
 myFile.print(now.hour());
-myFile.print(":");
+myFile.print(':");
 myFile.print(now.minute());
 //rtc.getTemperature(); //convert current temperature into registers
 myFile.print(",");
@@ -83,301 +83,237 @@ int oldHour = 0;
     teststr.trim();                        // remove any \r \n whitespace at the end of the String
      if (teststr == "1") {
       //Serial.println("Teras nyala 1 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala1");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "2") {
       //Serial.println("Teras mati 1 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati1");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "3") {
       //Serial.println("Teras nyala 2 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala2");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "4") {
       //Serial.println("Teras mati 2 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati2");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "5") {
       //Serial.println("Teras nyala 3 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala3");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "6") {
       //Serial.println("Teras mati 3 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati3");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "7") {
       //Serial.println("Teras nyala 4 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala4");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "8") {
       //Serial.println("Teras mati 4 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati4");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "9") {
       //Serial.println("Teras nyala 5 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala5");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "10") {
       //Serial.println("Teras mati 5 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati5");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "11") {
       //Serial.println("Teras nyala 6 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala6");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "12") {
       //Serial.println("Teras mati 6 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati6");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "13") {
       //Serial.println("Teras nyala 7 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala7");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "14") {
       //Serial.println("Teras mati 7 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati7");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "15") {
       //Serial.println("Teras nyala 8 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala8");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "16") {
       //Serial.println("Teras mati 8 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati8");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "17") {
       //Serial.println("Teras nyala 9 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala9");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "18") {
       //Serial.println("Teras mati 9 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati9");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "19") {
       //Serial.println("Teras nyala 10 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala10");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "20") {
       //Serial.println("Teras mati 10 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati10");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "21") {
       //Serial.println("Teras nyala 11 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala11");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "22") {
       //Serial.println("Teras mati 11 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati11");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "23") {
       //Serial.println("Teras nyala 12 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala12");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "24") {
       //Serial.println("Teras mati 12 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati12");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "25") {
     //   //Serial.println("Teras nyala 13 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala13");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "26") {
     //   //Serial.println("Teras mati 13 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati13");
-        //Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "27") {
      //Serial.println("Teras nyala 14 = ");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala14");
-        //Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "28") {
      //Serial.println("Teras mati 14 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati14");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "29") {
       //Serial.println("Teras nyala 15 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala15");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "30") {
       //Serial.println("Teras mati 15 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati15");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "31") {
       //Serial.println("Teras nyala 16 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"nyala16");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else if (teststr == "32") {
       //Serial.println("Teras mati 16 = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
         save_temperature(teststr,"mati16");
-        Serial.println("data");
-        oldHour = newHour;
-      }
+      
     } else {
       //Serial.println("Peritah salah = diterima(" + teststr + "),");
-      DateTime now = rtc.now();
-      newHour = now.hour();
-      if (oldHour != newHour) {
-        save_temperature(teststr,"dibatalkan");
-        Serial.println("Batal");
-        oldHour = newHour;
-      }
+        save_temperature(teststr1,"dibatalkan");
+      
+    }
+
+    switch(teststr){
+        
+        case '1':
+                save_temperature(teststr,"nyala1");
+        break;
+        case '2':
+                save_temperature(teststr,"mati1");
+        break;
+        case '3':
+                save_temperature(teststr,"nyala2");
+        break;
+        case '4':
+                save_temperature(teststr,"mati2");
+        break;
+        case '5':
+                save_temperature(teststr,"nyala3");
+        break;
+        case '6':
+                save_temperature(teststr,"mati3");
+        break;
+        case '7':
+                save_temperature(teststr,"nyala4");
+        break;
+        case '8':
+                save_temperature(teststr,"mati4");
+        break;
+        case '9':
+                save_temperature(teststr,"nyala5");
+        break;
+        case '10':
+                save_temperature(teststr,"mati5");
+        break;
+        case '11':
+                save_temperature(teststr,"nyala6");
+        break;
+        case '12':
+                save_temperature(teststr,"mati6");
+        break;
+        case '13':
+                save_temperature(teststr,"nyala7");
+        break;
+        case '14':
+                save_temperature(teststr,"mati7");
+        break;
+        case '15':
+                save_temperature(teststr,"nyala8");
+        break;
+        case '16':
+                save_temperature(teststr,"mati8");
+        break;
+        case '17':
+                save_temperature(teststr,"nyala9");
+        break;
+        case '18':
+                save_temperature(teststr,"mati9");
+        break;
+        case '19':
+                save_temperature(teststr,"nyala10");
+        break;
+        case '20':
+                save_temperature(teststr,"mati10");
+        break;
+        case '21':
+                save_temperature(teststr,"nyala11");
+        break;
+        case '22':
+                save_temperature(teststr,"mati11");
+        break;
+        case '23':
+                save_temperature(teststr,"nyala12");
+        break;
+        case '24':
+                save_temperature(teststr,"mati12");
+        break;
+        case '25':
+                save_temperature(teststr,"nyala13");
+        break;
+        case '26':
+                save_temperature(teststr,"mati13");
+        break;
+        case '27':
+                save_temperature(teststr,"nyala14");
+        break;
+        case '28':
+                save_temperature(teststr,"mati14");
+        break;
+        case '29':
+                save_temperature(teststr,"nyala15");
+        break;
+        case '30':
+                save_temperature(teststr,"mati15");
+        break;
+        case '31':
+                save_temperature(teststr,"nyala16");
+        break;
+        case '32':
+                save_temperature(teststr,"mati16");
+        break;
+
     }
 
 

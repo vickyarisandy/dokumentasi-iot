@@ -1,24 +1,61 @@
 
 #include <EEPROM.h>
-#include <WiFi.h>
-#include <WebServer.h>
+//#include <WiFi.h>
+#include <WiFiClient.h>
+#include <ESP8266WebServer.h>
 #include "index.h" 
 
+const int SIG = 2;// SIG pin  
+const int EN = 7;// Enable pin 
+const int controlPin[4] = {3, 4, 5, 6}; // 4 pins used  for binary output
+
+
+const int muxTable[16][4] = {
+  // s0, s1, s2, s3     channel
+    {0,  0,  0,  0}, // 0
+    {1,  0,  0,  0}, // 1
+    {0,  1,  0,  0}, // 2
+    {1,  1,  0,  0}, // 3
+    {0,  0,  1,  0}, // 4
+    {1,  0,  1,  0}, // 5
+    {0,  1,  1,  0}, // 6
+    {1,  1,  1,  0}, // 7
+    {0,  0,  0,  1}, // 8
+    {1,  0,  0,  1}, // 9
+    {0,  1,  0,  1}, // 10
+    {1,  1,  0,  1}, // 11
+    {0,  0,  1,  1}, // 12
+    {1,  0,  1,  1}, // 13
+    {0,  1,  1,  1}, // 14
+    {1,  1,  1,  1}  // 15
+};
+
+int relay1[4] = {0,  0,  0,  0};
+
+
 #define EEPROM_SIZE 17
-WebServer server(80);
+
+
+#ifndef STASSID
+#define STASSID "GConnect v0.1 :)"
+#define STAPSK  "12345678"
+#endif
+
+ESP8266WebServer server(80);
 //int relay 1 = 13, relay 2 = 14, relay 3 = 27, relay 4 = 26;
-int relay1 = 13, relay2 = 14, relay3 = 27, relay4 = 26;
-int relay5 = 25, relay6 = 33, relay7 = 32, relay8 = 23;
-int relay9 = 2, relay10 = 17, relay11 = 16, relay12 = 4;
-int relay13 = 15, relay14 = 5, relay15 = 18, relay16 = 19; 
+int relay1 = channelControl(1);
+//  relay2 = 14, relay3 = 27, relay4 = 26;
+// int relay5 = 25, relay6 = 33, relay7 = 32, relay8 = 23;
+// int relay9 = 2, relay10 = 17, relay11 = 16, relay12 = 4;
+// int relay13 = 15, relay14 = 5, relay15 = 18, relay16 = 19; 
 
-int state1 = HIGH, state2 = HIGH, state3 = HIGH, state4 = HIGH;
-int state5 = HIGH, state6 = HIGH, state7 = HIGH, state8 = HIGH;
-int state9 = HIGH, state10 = HIGH, state11 = HIGH, state12 = HIGH;
-int state13 = HIGH, state14 = HIGH, state15 = HIGH, state16 = HIGH;
+// int state1 = HIGH, state2 = HIGH, state3 = HIGH, state4 = HIGH;
+// int state5 = HIGH, state6 = HIGH, state7 = HIGH, state8 = HIGH;
+// int state9 = HIGH, state10 = HIGH, state11 = HIGH, state12 = HIGH;
+// int state13 = HIGH, state14 = HIGH, state15 = HIGH, state16 = HIGH;
 
-const char* ApSsid = "GConnect v0.1 :)";
-const char* ApPassword = "12345678";
+const char* ApSsid = STASSID;
+const char* ApPassword = STAPSK;
 
 void handleRoot() {
     String s = MAIN_page; //Read HTML contents
@@ -237,7 +274,7 @@ void handlestate() {
 }
 void setup() {
   EEPROM.begin(EEPROM_SIZE);
-  WiFi.softAP(ApSsid, ApPassword);  //default IP: http://192.168.4.1
+  WiFi.begin(ApSsid, ApPassword);  //default IP: http://192.168.4.1
   pinMode(relay1, OUTPUT);
   pinMode(relay2, OUTPUT);
   pinMode(relay3, OUTPUT);
@@ -317,3 +354,21 @@ void getstate() {
     state16 = EEPROM.read(16);
     setrelaystate();
 }
+
+
+void channelControl(int relayChannel)
+{
+    // Robojax 16ch relay with multiplexer 20181201
+    digitalWrite(controlPin[0], muxTable[relayChannel][0]);
+    digitalWrite(controlPin[1], muxTable[relayChannel][1]);
+    digitalWrite(controlPin[2], muxTable[relayChannel][2]);
+    digitalWrite(controlPin[3], muxTable[relayChannel][3]);
+  
+       Serial.print(relayChannel);
+       Serial.print (": ");
+       Serial.print(muxTable[relayChannel][3]);
+       Serial.print(muxTable[relayChannel][2]);
+       Serial.print(muxTable[relayChannel][1]);
+       Serial.println(muxTable[relayChannel][0]); 
+   // Robojax 16ch relay with multiplexer 20181201 
+}//channelControl end

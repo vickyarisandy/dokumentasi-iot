@@ -23,7 +23,7 @@ void loop(){
     {
         pesan = sim.readStringUntil('\n');
         Serial.print(pesan);
-        if (pesan=="ON\r")
+        if (pesan=="nyala\r")
         {
             digitalWrite(relay,HIGH);
             eksekusi(1);
@@ -31,7 +31,7 @@ void loop(){
         }
 
 
-        if (pesan=="OFF\r")
+        if (pesan=="mati\r")
         {
             digitalWrite(relay,LOW);
             eksekusi(0);
@@ -45,13 +45,13 @@ void loop(){
 
 void eksekusi(bool tipe){
     sim.println("AT+CMGF=1");
-    sim.println("AT+CMGF=\"+6289xxxxxxx\"\r");
+    sim.println("AT+CMGF=\"+62895802005600\"\r");
     delay(1000);
     if (tipe=1){
         /* code */
-        sim.println("relay on");
+        sim.println("Siap, sudah Nyala");
     }else{
-        sim.println("relay off");
+        sim.println("Wokeh, sudah Dimatikan");
     }
     delay(100);
     sim.prinln((char)26);
