@@ -14,17 +14,17 @@ int relay13 = 15, relay14 = 5, relay15 = 18, relay16 = 19;
 
 /*
 8 (gpio23[sd]) => (gpio35),
-14 (gpio5[sd]) => (gpio0),
-15 (gpio18[sd]) => (gpio8),
-16 (gpio19[sd]) => (gpio7)
+14 (gpio5[sd]) => (gpio12),
+15 (gpio18[sd]) => (gpio34),
+16 (gpio19[sd]) => (gpio35)
 waktu(3v) = w
 sd card(5v) = sd
 relay(5v) = r1-r16
 
 - en      []  gpio23 [sd]
 - gpio36  []  gpio22 [w]
-- gpio39  []  gpio1 []
-- gpio34  []  gpio3 []
+- gpio39  [r16]  gpio1 []
+- gpio34  [r15]  gpio3 []
 - gpio35  [r8]  gpio21 [w]
 - gpio32  [r7]  gpio19 [sd]
 - gpio33  [r6]  gpio18 [sd]
@@ -32,11 +32,11 @@ relay(5v) = r1-r16
 - gpio26  [r4]  gpio17 [r10]
 - gpio27  [r3]  gpio16 [r11]
 - gpio14  [r2]  gpio4 [r12]
-- gpio12  []  gpio2 [r9]
+- gpio12  [r14]  gpio2 [r9]
 - gpio13  [r1]  gpio15 [r13]
-- gpio9   []  gpio0 [r14]
-- gpio10  []  gpio8 [r15]
-- gpio11  []  gpio7 [r16]
+- gpio9   []  gpio0 []
+- gpio10  []  gpio8 []
+- gpio11  []  gpio7 []
 - gnd     []  gpio6 []
 - vin     []  3v3 []
 
